@@ -19,7 +19,7 @@ namespace PersistentLayer
             SqlSugarClient db = new SqlSugarClient(
                 new ConnectionConfig()
                 {
-                    ConnectionString = "server=193.112.46.32;uid=root;pwd=Mysql781818.;database=TEST",
+                    ConnectionString = "server=10.60.38.173;uid=root;pwd=123456.;database=test2019_clone",
                     DbType = DbType.MySql,//设置数据库类型
                     IsAutoCloseConnection = true,//自动释放数据务，如果存在事务，在事务结束后释放
                     InitKeyType = InitKeyType.Attribute //从实体特性中读取主键自增列信息
