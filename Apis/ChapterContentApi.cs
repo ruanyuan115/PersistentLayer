@@ -5,7 +5,7 @@ using PersistentLayer.Mapper;
 
 namespace PersistentLayer.Apis
 {
-    class ChapterContentApi
+    public class ChapterContentApi
     {
         public ChapterNode getByID(int id)
         {

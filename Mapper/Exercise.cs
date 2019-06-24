@@ -6,7 +6,7 @@ using SqlSugar;
 namespace PersistentLayer.Mapper
 {
     [SugarTable("exercise")]
-    class Exercise
+    public class Exercise
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "exercise_id")]
         public int exerciseId { set; get; }
