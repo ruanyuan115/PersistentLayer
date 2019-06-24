@@ -9,15 +9,15 @@ namespace PersistentLayer.Mapper
     public class CourseInfo
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "course_id")]
-        public int courseID { set; get; }
+        public int? courseID { set; get; }
         [SugarColumn(ColumnName = "teacher_id")]
-        public int teacherID { set; get; }
+        public int? teacherID { set; get; }
         [SugarColumn(ColumnName = "course_name")]
         public String courseName { set; get; }
         [SugarColumn(ColumnName = "course_teacher")]
         public String teacherName { set; get; }
         [SugarColumn(ColumnName = "course_year")]
-        public int courseYear { set; get; }
+        public int? courseYear { set; get; }
         [SugarColumn(ColumnName = "course_semester")]
         public String courseSemester { set; get; }
         [SugarColumn(ColumnName = "start_time")]
@@ -25,6 +25,6 @@ namespace PersistentLayer.Mapper
         [SugarColumn(ColumnName = "end_time")]
         public DateTime endTime { set; get; }
         [SugarColumn(ColumnName = "rate")]
-        public float rate { set; get; }
+        public float? rate { set; get; }
     }
 }

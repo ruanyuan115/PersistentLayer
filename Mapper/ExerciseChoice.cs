@@ -9,9 +9,9 @@ namespace PersistentLayer.Mapper
     public class ExerciseChoice
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "id")]
-        public int id { set; get; }
+        public int? id { set; get; }
         [SugarColumn(ColumnName = "exercise_id")]
-        public int exerciseId { set; get; }
+        public int? exerciseId { set; get; }
         [SugarColumn(ColumnName = "exercice_choice_id")]
         public string exerciceChoiceId { set; get; }
         [SugarColumn(ColumnName = "choice")]
@@ -20,7 +20,7 @@ namespace PersistentLayer.Mapper
         {
         }
 
-        public ExerciseChoice(int exerciseId, string exerciceChoiceId, string choice)
+        public ExerciseChoice(int? exerciseId, string exerciceChoiceId, string choice)
         {
             this.exerciseId = exerciseId;
             this.exerciceChoiceId = exerciceChoiceId;

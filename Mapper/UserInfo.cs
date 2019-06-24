@@ -9,7 +9,7 @@ namespace PersistentLayer.Mapper
     public class UserInfo
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "user_id")]
-        public int userID { set; get; }
+        public int? userID { set; get; }
         [SugarColumn(ColumnName = "mail")]
         public string mail { set; get; }
         [SugarColumn(ColumnName = "password")]
@@ -19,7 +19,7 @@ namespace PersistentLayer.Mapper
         [SugarColumn(ColumnName = "role")]
         public string role { set; get; }
         [SugarColumn(ColumnName = "work_id")]
-        public int workID { set; get; }
+        public int? workID { set; get; }
         [SugarColumn(ColumnName = "gender")]
         public string gender { set; get; }
 

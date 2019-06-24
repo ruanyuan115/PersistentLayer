@@ -9,10 +9,10 @@ namespace PersistentLayer.Mapper
     public class ChapterRelation
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "id")]
-        public int id { set; get; }
+        public int? id { set; get; }
         [SugarColumn(ColumnName = "chapter_id")]
-        public int chapterID { set; get; }
+        public int? chapterID { set; get; }
         [SugarColumn(ColumnName = "pre_chapter_id")]
-        public int preChapterID { set; get; }
+        public int? preChapterID { set; get; }
     }
 }

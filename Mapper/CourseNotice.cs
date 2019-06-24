@@ -9,9 +9,9 @@ namespace PersistentLayer.Mapper
     public class CourseNotice
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "id")]
-        public int id { set; get; }
+        public int? id { set; get; }
         [SugarColumn(ColumnName = "course_id")]
-        public int courseID { set; get; }
+        public int? courseID { set; get; }
         [SugarColumn(ColumnName = "course_notice")]
         public string courseNotice { set; get; }
 

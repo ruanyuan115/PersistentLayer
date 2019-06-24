@@ -9,15 +9,15 @@ namespace PersistentLayer.Mapper
     public class ChapterNode
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true, ColumnName = "id")]
-        public Int32 id { set; get; }
+        public int? id { set; get; }
         [SugarColumn(ColumnName = "course_id")]
-        public int courseID { get; set; }
+        public int? courseID { get; set; }
         [SugarColumn(ColumnName = "content_name")]
         public string contentName { get; set; }
         [SugarColumn(ColumnName = "parent_id")]
-        public int parentID { get; set; }
+        public int? parentID { get; set; }
         [SugarColumn(ColumnName = "sibling_id")]
-        public int siblingID { get; set; }
+        public int? siblingID { get; set; }
         [SugarColumn(ColumnName = "content")]
         public string content { get; set; }
         [SugarColumn(ColumnName = "exercise_title")]
@@ -31,9 +31,9 @@ namespace PersistentLayer.Mapper
         [SugarColumn(ColumnName = "exercise_deadline_2")]
         public DateTime exerciseDeadline_2 { get; set; }
         [SugarColumn(ColumnName = "exercise_total_1")]
-        public int exerciseTotal_1 { get; set; }
+        public int? exerciseTotal_1 { get; set; }
         [SugarColumn(ColumnName = "exercise_total_2")]
-        public int exerciseTotal_2 { get; set; }
+        public int? exerciseTotal_2 { get; set; }
 
     }
 }
