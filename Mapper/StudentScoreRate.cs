@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PersistentLayer.Mapper
 {
-    class StudentScoreRate
+    public class StudentScoreRate
     {
         public int? studentID { get; set; }
         public int? totalScore_1 { get; set; }
