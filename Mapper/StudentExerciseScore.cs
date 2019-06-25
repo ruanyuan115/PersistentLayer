@@ -17,14 +17,14 @@ namespace PersistentLayer.Mapper
         [SugarColumn(ColumnName = "student_answer")]
         public string studentAnswer { set; get; }
         [SugarColumn(ColumnName = "exercise_score")]
-        public int? exerciseScore { set; get; }
+        public String exerciseScore { set; get; }
         [SugarColumn(ColumnName = "corrected")]
         public int? corrected { set; get; }
         public StudentExerciseScore()
         {
         }
 
-        public StudentExerciseScore(int? studentId, int? exerciseId, string studentAnswer, int? exerciseScore)
+        public StudentExerciseScore(int? studentId, int? exerciseId, string studentAnswer, String exerciseScore)
         {
             this.studentId = studentId;
             this.exerciseId = exerciseId;
