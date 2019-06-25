@@ -26,5 +26,7 @@ namespace PersistentLayer.Mapper
         public string comment { set; get; }
         [SugarColumn(ColumnName = "rate")]
         public int? rate { set; get; }
+        [SugarColumn(ColumnName ="nlp_rate")]
+        public string nlpRate { set; get; }
     }
 }

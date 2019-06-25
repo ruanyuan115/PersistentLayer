@@ -33,7 +33,7 @@ namespace PersistentLayer.Apis
         }
         public static Boolean existsByChapterIDAndStudentID(int? chapterID, int? studentID)
         {
-            return Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID && it.studentID == studentID).Count()>0?true:false;
+            return Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID && it.studentID == studentID).Count() > 0 ? true : false;
         }
         public static List<StudentChapter> findByChapterIDBetweenAndStudentIDOrderByChapterIDDesc(int? least, int? most, int? studentId)
         {
@@ -43,9 +43,17 @@ namespace PersistentLayer.Apis
         {
             return Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID).ToList();
         }
-        public static int countByChapterIDAndRate(int? chapterID, int? rate)
+        public static int? countByChapterIDAndRate(int? chapterID, int? rate)
         {
             return Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID && it.rate == rate).Count();
+        }
+        public static string getNLPRateByChapterIDAndStudentID(int? chapterID, int? studentID)
+        {
+            return Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID && it.studentID == studentID).Select(f => f.nlpRate).ToString();
+        }
+        public static int? setNLPRateByChapterIDAndStudentID(string nlpRate, int?chapterID, int? studentID)
+        {
+            return Global.db.Updateable<StudentChapter>().UpdateColumns(it => new StudentChapter() { nlpRate = nlpRate }).Where(it => it.chapterID == chapterID && it.studentID == studentID).ExecuteCommand();
         }
     }
 }
