@@ -17,7 +17,7 @@ namespace PersistentLayer.Apis
         }
         public static int? insert(CourseName courseName)
         {
-            return Global.db.Insertable(courseName).ExecuteCommand();
+            return courseName.courseNameID!=null?Global.db.Saveable(courseName).ExecuteCommand(): Global.db.Insertable(courseName).ExecuteCommand();
         }
         public static int? update(CourseName courseName)
         {

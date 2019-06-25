@@ -17,7 +17,7 @@ namespace PersistentLayer.Apis
         }
         public static int? insert(ChapterNode chapterNode)
         {
-            return Global.db.Insertable(chapterNode).ExecuteCommand();
+            return chapterNode.id!=null?Global.db.Saveable<ChapterNode>(chapterNode).ExecuteCommand(): Global.db.Insertable(chapterNode).ExecuteCommand();
         }
         public static int? update(ChapterNode chapterNode)
         {
@@ -35,6 +35,9 @@ namespace PersistentLayer.Apis
         {
             return Global.db.Queryable<ChapterNode>().Where(it => it.courseID == courseID && it.parentID == parentID).ToList();
         }
-
+        public static ChapterNode findByCourseIDAndParentIDAndSiblingID(int? courseID,int? parentID,int? siblingID)
+        {
+            return Global.db.Queryable<ChapterNode>().Where(it => it.courseID==courseID&&it.parentID == parentID && it.siblingID == siblingID).First();
+        }
     }
 }

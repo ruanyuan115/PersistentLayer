@@ -17,7 +17,7 @@ namespace PersistentLayer.Apis
         }
         public static int? insert(UserInfo userInfo)
         {
-            return Global.db.Insertable(userInfo).ExecuteCommand();
+            return userInfo.userID!=null?Global.db.Saveable(userInfo).ExecuteCommand(): Global.db.Insertable(userInfo).ExecuteCommand();
         }
         public static int? update(UserInfo userInfo)
         {

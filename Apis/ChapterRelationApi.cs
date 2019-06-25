@@ -17,7 +17,7 @@ namespace PersistentLayer.Apis
         }
         public static int? insert(ChapterRelation chapterRelation)
         {
-            return Global.db.Insertable(chapterRelation).ExecuteCommand();
+            return chapterRelation.id!=null?Global.db.Saveable<ChapterRelation>(chapterRelation).ExecuteCommand(): Global.db.Insertable(chapterRelation).ExecuteCommand();
         }
         public static int? update(ChapterRelation chapterRelation)
         {
@@ -32,11 +32,11 @@ namespace PersistentLayer.Apis
             var temp=Global.db.Queryable<ChapterRelation>().Where(it => it.chapterID == chapterID && it.preChapterID == preChapterID).First();
             return temp;
         }
-        public static List<ChapterRelation> findByChapterID(Int32? chapterID)
+        public static List<ChapterRelation> findByChapterID(int? chapterID)
         {
             return Global.db.Queryable<ChapterRelation>().Where(it => it.chapterID == chapterID).ToList();
         }
-        public static List<ChapterRelation> findByPreChapterID(Int32? preChapterID)
+        public static List<ChapterRelation> findByPreChapterID(int? preChapterID)
         {
             return Global.db.Queryable<ChapterRelation>().Where(it => it.preChapterID == preChapterID).ToList();
         }
