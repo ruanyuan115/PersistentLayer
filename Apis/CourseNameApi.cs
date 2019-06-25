@@ -29,7 +29,7 @@ namespace PersistentLayer.Apis
         }
         public static CourseName getByCourseName(string courseName)
         {
-            return (CourseName)Global.db.Queryable<CourseName>().Where(it => it.courseName == courseName);
+            return Global.db.Queryable<CourseName>().Where(it => it.courseName == courseName).First();
         }
         public static Boolean existsByCourseName(string courseName)
         {
@@ -37,11 +37,11 @@ namespace PersistentLayer.Apis
         }
         public static CourseName findByCourseName(string courseName)
         {
-            return (CourseName)Global.db.Queryable<CourseName>().Where(it => it.courseName == courseName);
+            return Global.db.Queryable<CourseName>().Where(it => it.courseName == courseName).First();
         }
         public static CourseName findByCourseNameID(int? courseNameID)
         {
-            return (CourseName)Global.db.Queryable<CourseName>().Where(it => it.courseNameID == courseNameID);
+            return Global.db.Queryable<CourseName>().Where(it => it.courseNameID == courseNameID).First();
         }
     }
 }

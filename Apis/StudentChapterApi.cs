@@ -29,7 +29,7 @@ namespace PersistentLayer.Apis
         }
         public static StudentChapter findByChapterIDAndStudentID(int? chapterID, int? studentID)
         {
-            return (StudentChapter)Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID && it.studentID == studentID);
+            return Global.db.Queryable<StudentChapter>().Where(it => it.chapterID == chapterID && it.studentID == studentID).First();
         }
         public static Boolean existsByChapterIDAndStudentID(int? chapterID, int? studentID)
         {

@@ -29,7 +29,7 @@ namespace PersistentLayer.Apis
         }
         public static StudentExerciseScore findByExerciseIdAndStudentId(int? exerciseId, int? studentId)
         {
-            return (StudentExerciseScore)Global.db.Queryable<StudentExerciseScore>().Where(it => it.exerciseId == exerciseId && it.studentId == studentId);
+            return Global.db.Queryable<StudentExerciseScore>().Where(it => it.exerciseId == exerciseId && it.studentId == studentId).First();
         }
         public static Boolean existsByExerciseIdAndStudentId(int? exerciseId, int? studentId)
         {

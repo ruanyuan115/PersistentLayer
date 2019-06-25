@@ -33,7 +33,7 @@ namespace PersistentLayer.Apis
         }
         public static Takes findByStudentIDAndCourseClassID(int? studentID, int? courseClassID)
         {
-            return (Takes)Global.db.Queryable<Takes>().Where(it => it.studentID == studentID && it.courseClassID == courseClassID);
+            return Global.db.Queryable<Takes>().Where(it => it.studentID == studentID && it.courseClassID == courseClassID).First();
         }
         public static List<Takes> findByCourseClassID(int? courseClassID)
         {

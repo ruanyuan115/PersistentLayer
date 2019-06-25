@@ -29,7 +29,7 @@ namespace PersistentLayer.Apis
         }
         public static CourseInfo findByCourseID(int? courseID)
         {
-            return (CourseInfo)Global.db.Queryable<CourseInfo>().Where(it => it.courseID == courseID);
+            return Global.db.Queryable<CourseInfo>().Where(it => it.courseID == courseID).First();
         }
         public static List<CourseInfo> findByTeacherID(int? teacherID)
         {

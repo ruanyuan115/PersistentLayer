@@ -29,7 +29,7 @@ namespace PersistentLayer.Apis
         }
         public static CourseRelation findByCourseNameIDAndPreCourseNameID(int? courseNameID, int? preCourseNameID)
         {
-            return (CourseRelation)Global.db.Queryable<CourseRelation>().Where(it => it.courseNameID == courseNameID && it.preCourseNameID == preCourseNameID);
+            return Global.db.Queryable<CourseRelation>().Where(it => it.courseNameID == courseNameID && it.preCourseNameID == preCourseNameID).First();
         }
         public static List<CourseRelation> findByPreCourseNameID(int? preCourseNameID)
         {

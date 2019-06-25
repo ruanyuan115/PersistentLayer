@@ -33,7 +33,7 @@ namespace PersistentLayer.Apis
         }
         public static Exercise findByExerciseId(int? id)
         {
-            return (Exercise)Global.db.Queryable<Exercise>().Where(it => it.exerciseId == id);
+            return Global.db.Queryable<Exercise>().Where(it => it.exerciseId == id).First();
         }
         public static List<Exercise> findByChapterId(int? id)
         {
