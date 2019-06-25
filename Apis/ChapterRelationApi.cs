@@ -29,8 +29,8 @@ namespace PersistentLayer.Apis
         }
         public static ChapterRelation findByChapterIDAndPreChapterID(int? chapterID, int? preChapterID)
         {
-            var temp=Global.db.Queryable<ChapterRelation>().Where(it => it.chapterID == chapterID && it.preChapterID == preChapterID).ToList();
-            return temp.Count > 0 ? temp[0] : null;
+            var temp=Global.db.Queryable<ChapterRelation>().Where(it => it.chapterID == chapterID && it.preChapterID == preChapterID).First();
+            return temp;
         }
         public static List<ChapterRelation> findByChapterID(Int32? chapterID)
         {

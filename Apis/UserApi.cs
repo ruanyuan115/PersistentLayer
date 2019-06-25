@@ -29,7 +29,7 @@ namespace PersistentLayer.Apis
         }
         public static UserInfo findByMail(string mail)
         {
-            return (UserInfo)Global.db.Queryable<UserInfo>().Where(it => it.mail == mail);
+            return Global.db.Queryable<UserInfo>().Where(it => it.mail == mail).First();
         }
     }
 }
