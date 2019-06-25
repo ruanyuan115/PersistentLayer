@@ -5,7 +5,7 @@ using PersistentLayer.Mapper;
 
 namespace PersistentLayer.Apis
 {
-    class TakesApi
+    public class TakesApi
     {
         public static Takes getByID(int? id)
         {

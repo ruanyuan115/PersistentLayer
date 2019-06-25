@@ -5,7 +5,7 @@ using PersistentLayer.Mapper;
 
 namespace PersistentLayer.Apis
 {
-    class StudentScoreRateApi
+    public class StudentScoreRateApi
     {
         public static List<StudentScoreRate> getStudentScoreRate(List<Dictionary<string,int>> keyMaps)
         {

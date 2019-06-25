@@ -5,7 +5,7 @@ using PersistentLayer.Mapper;
 
 namespace PersistentLayer.Apis
 {
-    class StudentExerciseScoreApi
+    public class StudentExerciseScoreApi
     {
         public static StudentExerciseScore getByID(int? id)
         {

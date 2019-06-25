@@ -5,7 +5,7 @@ using PersistentLayer.Mapper;
 
 namespace PersistentLayer.Apis
 {
-    class UserApi_m
+    public class UserApi_m
     {
         public static List<UserInfo> findByUserID(List<int> userIDs)
         {
